@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 //MODELS 
-var Product = require('../models/products');
+var Product = require('../models/product');
 
 
 
