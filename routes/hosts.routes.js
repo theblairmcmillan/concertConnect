@@ -5,10 +5,10 @@ var router = express.Router();
 
 var controller = require('../controllers/hostsController');
 
-router.get('/hosts', controller.index);
-router.post('/hosts/:name/:location/:venue/:genre/:website/:accomodations/:about/:tel', controller.createHost);
-router.get('/hosts/:id', controller.getSingleHost);
-router.delete('/hosts/:id', controller.destroy);
-router.post('/hosts/:id', controller.updateSingleHost);
+router.get('/api/hosts', controller.index);
+router.post('/api/hosts/:name/:location/:venue/:genre/:website/:accomodations/:about/:tel', controller.createHost);
+router.get('/api/hosts/:id', controller.getSingleHost);
+router.delete('/api/hosts/:id', controller.destroy);
+router.post('/api/hosts/:id', controller.updateSingleHost);
 
 module.exports = router;

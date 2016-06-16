@@ -2,6 +2,7 @@
 // DEPENDENCIES 
 var express = require('express');
 var mongoose = require('mongoose');
+var path = require('path');
 var bodyParser = require('body-parser');
 var router = require('./routes/routes');
 
@@ -12,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/concertConnect');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(express.static(path.join(__dirname, 'public')));
 //ROUTES
 app.use(router);
 

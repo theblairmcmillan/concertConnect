@@ -22,6 +22,6 @@
     "angular-route": "^1.5.7"
   },
   "resolutions": {
-    "jquery": "^3.0.0"
+    "jquery": "1.9.1 - 2"
   }
 }

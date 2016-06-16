@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 
 
 // SCHEMA 
-var Hosts = mongoose.model3('hosts', mongoose.Schema({
+var Hosts = mongoose.model('hosts', mongoose.Schema({
 	name: String,
 	location: String,
 	venue: String,

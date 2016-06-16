@@ -1,6 +1,6 @@
 "use strict";
 
-let app = angular.module("concertConnect", ["ngRoute", "ngFileUpload"]);
+let app = angular.module("concertConnect", ["ngRoute"]);
 
 app.config(function($routeProvider) {
 
@@ -13,9 +13,9 @@ app.config(function($routeProvider) {
         	templateUrl: "app/artistView/artistView.html",
         	controller: "artistViewController"
         })
-        .when('/host/:id',{
-        	templateUrl: "app/hostView/hostView.html",
-        	controller: "hostViewController"
-        })
+        // .when('/host/:id',{
+        // 	templateUrl: "app/hostView/hostView.html",
+        // 	controller: "hostViewController"
+        // })
     .otherwise({ redirectTo: '/login' });
 });
