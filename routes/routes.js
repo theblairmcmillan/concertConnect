@@ -4,15 +4,11 @@ var router = express.Router();
 
 
 //MODELS 
-var Product = require('../models/product');
-
-
-
+var artists = require('./artists.routes');
 
 
 //ROUTES 
-Product.methods(['get', 'put', 'post', 'delete']);
-Product.register(router, '/products');
+router.use(artists);
 
 
 
