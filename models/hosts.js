@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var Hosts = mongoose.model.('hosts', mongoose.Schema({
 	name: String,
 	location: String,
-	vanue: String,
+	venue: String,
 	genre: String,
 	website: String,
 	accomodations: String,
