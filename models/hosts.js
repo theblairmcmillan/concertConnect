@@ -26,6 +26,7 @@ module.exports.index = (req, res) => {
 	})
 };
 
+// CREATE HOST 
 module.exports.createHost = (req, res) => {
 	console.log(req.params)
 	Hosts.create(req.params, (err) => {
@@ -34,6 +35,7 @@ module.exports.createHost = (req, res) => {
 	})
 };
 
+// GET SINGLE HOST 
 module.exports.getSingleHost = (req, res) => {
 	console.log(req.params.id)
 	Hosts.find({id: req.params.id }, (err, host) => {
@@ -42,6 +44,7 @@ module.exports.getSingleHost = (req, res) => {
 	})
 };
 
+// DELETE HOST BY ID
 module.exports.destroy = (req, res) => {
 	console.log(req.params)
 	Hosts.find({id: req.params.id }, (err, host) => {
@@ -53,14 +56,13 @@ module.exports.destroy = (req, res) => {
 	})
 };
 
-module.exports.destroy = (req, res) => {
+
+// GET SINGLE HOST BY ID AND UPDATE
+module.exports.updateSingleHost = (req, res) => {
 	console.log(req.params)
-	Hosts.find({id: req.params.id }, (err, host) => {
+	Hosts.findbyIdAndUpdate(req.params.id, {req.params}, (err, host) => {
 		if (err) throw err;
-		host.remove(function(err){
-			if (err) throw err;
-			console.log("user deleted!");
-		})
+		res.send('Found by Id and Updated!')
 	})
 };
 
