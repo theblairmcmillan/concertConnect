@@ -1,0 +1,27 @@
+{
+  "name": "conncertConnect",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "BlairMcMillan <theblairmcmillan@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/theblairmcmillan/concertConnect",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7"
+  },
+  "resolutions": {
+    "jquery": "^3.0.0"
+  }
+}
