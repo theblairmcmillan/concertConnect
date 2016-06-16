@@ -1,6 +1,5 @@
 // DEPENDENCIES 
-var restful = require('node-restful');
-var mongoose = restful.mongoose;
+var mongoose = require('mongoose');
 
 
 // SCHEMA 
@@ -11,8 +10,7 @@ var Artists = mongoose.model('artists', mongoose.Schema({
 	genre: String,
 	partyOf: Number,
 	website: String,
-	about: String,
-	id: Number
+	about: String
 }));
 
 
