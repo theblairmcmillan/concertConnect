@@ -9,3 +9,4 @@ module.exports.index = (req, res) => {
 module.exports.createArtist = (req, res) => {
 	ArtistsModel.createArtist(req, res);
 };
+

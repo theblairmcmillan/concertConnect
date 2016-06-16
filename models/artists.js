@@ -1,3 +1,4 @@
+"use strict";
 // DEPENDENCIES 
 var mongoose = require('mongoose');
 
@@ -8,9 +9,10 @@ var Artists = mongoose.model('artists', mongoose.Schema({
 	hometown: String,
 	age: Number,
 	genre: String,
-	partyOf: Number,
+	group_size: Number,
 	website: String,
-	about: String
+	about: String,
+	tel: Number
 }));
 
 

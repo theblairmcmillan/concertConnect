@@ -1,3 +1,4 @@
+'use strict';
 // DEPENDENCIES 
 var mongoose = require('mongoose');
 
@@ -10,7 +11,8 @@ var Hosts = mongoose.model.('hosts', mongoose.Schema({
 	genre: String,
 	website: String,
 	accomodations: String,
-	about: String
+	about: String,
+	tel: Number
 }));
 
 
@@ -22,12 +24,54 @@ module.exports.index = (req, res) => {
 		if (err) throw err;
 		res.send(hosts)
 	})
-}
+};
 
-module.exports.createArtist = (req, res) => {
+module.exports.createHost = (req, res) => {
 	console.log(req.params)
-	Artists.create(req.params, (err) => {
+	Hosts.create(req.params, (err) => {
 		if (err) throw err;
 		res.send('Created new host!')
 	})
-}
+};
+
+module.exports.getSingleHost = (req, res) => {
+	console.log(req.params.id)
+	Hosts.find({id: req.params.id }, (err, host) => {
+		if (err) throw err;
+		res.send(host);
+	})
+};
+
+module.exports.destroy = (req, res) => {
+	console.log(req.params)
+	Hosts.find({id: req.params.id }, (err, host) => {
+		if (err) throw err;
+		host.remove(function(err){
+			if (err) throw err;
+			console.log("user deleted!");
+		})
+	})
+};
+
+module.exports.destroy = (req, res) => {
+	console.log(req.params)
+	Hosts.find({id: req.params.id }, (err, host) => {
+		if (err) throw err;
+		host.remove(function(err){
+			if (err) throw err;
+			console.log("user deleted!");
+		})
+	})
+};
+
+
+
+
+
+
+
+
+
+
+
+
