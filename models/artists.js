@@ -60,11 +60,21 @@ module.exports.destroy = (req, res) => {
 // GET SINGLE ARTIST BY ID AND UPDATE
 module.exports.updateSingleArtist = (req, res) => {
 	console.log(req.params)
-	Artists.findbyIdAndUpdate(req.params.id, {req.params}, (err, artist) => {
+	Artists.findByIdAndUpdate(req.params.id, req.params, (err, artist) => {
 		if (err) throw err;
 		res.send('Found by Id and Updated!')
 	})
 };
+
+
+
+
+
+
+
+
+
+
 
 
 
