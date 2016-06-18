@@ -1,3 +1,10 @@
+
+
+
+/****************
+NAV BAR STYLING 
+****************/
+
 #custom-bootstrap-menu.navbar-default .navbar-brand {
     color: rgba(245, 203, 92, 1);
 }
@@ -5,7 +12,7 @@
     font-size: 14px;
     background-color: rgba(36, 36, 35, 1);
     border-width: 0px;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
     color: rgba(232, 237, 223, 1);
@@ -13,13 +20,13 @@
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
-    color: rgba(245, 203, 92, 1);
+    color: rgba(36, 36, 35, 1);
     background-color: rgba(245, 203, 92, 1);
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
-    color: rgba(232, 237, 223, 1);
+    color: rgba(207, 219, 213, 1);
     background-color: rgba(36, 36, 35, 1);
 }
 #custom-bootstrap-menu.navbar-default .navbar-toggle {
@@ -30,9 +37,93 @@
     background-color: #242423;
 }
 #custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
-    background-color: #242423;
+    background-color: #fff;
 }
 #custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
-    background-color: #242423;
+    background-color: #fff;
 }
+
+/*************
+LOGIN CONTAINER STYLE
+**************/
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/**************************
+main container
+***************************/
+
+
+/**************************
+Top Row Stuff 
+***************************/
+
+#photo, #vitals, #blurb {
+    border: 1px solid black;
+    height: 160px;
+    background-color: rgba(207, 219,213, .1);
+} 
+
+/**************************
+Mid Row Stuff 
+***************************/
+
+#dates, #map {
+    border: 1px solid black;
+    height: 350px;
+    background-color: rgba(207, 219,213, .1);
+    margin-top: 5px;
+} 
+
+/**************************
+FOOTER STUFF
+***************************/
+
+.footer {
+    height: 40px;
+    color: yellow;
+    background-color: #242423;
+    clear: both;
+    bottom: 0;
+    position: relative;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+

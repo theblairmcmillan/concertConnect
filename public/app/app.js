@@ -10,7 +10,7 @@ app.config(function($routeProvider) {
           controller: "loginController"
         })
         .when('/artist/:id',{
-        	templateUrl: "app/artistView/artistView.html",
+        	templateUrl: "app/artist/artistView.html",
         	controller: "artistViewController"
         })
         // .when('/host/:id',{
