@@ -27,6 +27,8 @@ artistSchema.methods.generateHash = function(password) {
 
 // checking if password is valid
 artistSchema.methods.validPassword = function(password) {
+	console.log("is valid???", password);
+	console.log("local password:", this.local.password)
     return bcrypt.compareSync(password, this.local.password);
 };
 
