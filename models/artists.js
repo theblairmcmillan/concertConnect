@@ -1,6 +1,7 @@
 "use strict";
 // DEPENDENCIES 
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 
 
 // SCHEMA 
@@ -12,7 +13,11 @@ var Artists = mongoose.model('artists', mongoose.Schema({
 	group_size: Number,
 	website: String,
 	about: String,
-	tel: Number
+	tel: Number,
+	local: {
+		email: String,
+		password: String
+	}
 }));
 
 
@@ -65,6 +70,20 @@ module.exports.updateSingleArtist = (req, res) => {
 		res.send('Found by Id and Updated!')
 	})
 };
+
+
+// generating a hash
+Artists.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+// checking if password is valid
+Artists.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.local.password);
+};
+
+// create the model for users and expose it to our app
+module.exports = mongoose.model('artist', Artists);
 
 
 
