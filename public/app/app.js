@@ -9,13 +9,13 @@ app.config(function($routeProvider) {
           templateUrl: "app/login/login.html",
           controller: "loginController"
         })
-        .when('/artist/:id',{
+        .when('/artists',{
         	templateUrl: "app/artist/artistView.html",
         	controller: "artistViewController"
         })
-        // .when('/host/:id',{
-        // 	templateUrl: "app/hostView/hostView.html",
-        // 	controller: "hostViewController"
-        // })
+        .when('/hosts/:id',{
+        	templateUrl: "app/hostView/hostView.html",
+        	controller: "hostViewController"
+        })
     .otherwise({ redirectTo: '/login' });
 });
