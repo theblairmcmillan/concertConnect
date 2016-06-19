@@ -8,4 +8,15 @@ app.controller("loginController", ["$scope", "$location","$http", function ($sco
 		})
 	}
 
+	$scope.loginArtist = (email, password) => {
+		$http.post(`/api/artists/login/${email}/${password}`, function(data, err) {
+			console.log("data", data);
+		})
+	}
+
+
+
+
+
+
 }]);
