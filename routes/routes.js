@@ -10,23 +10,6 @@ var artists = require('./artists.routes');
 var hosts = require('./hosts.routes');
 
 
-// // INDEX 
-// router.get('/', function(req, res) {
-// 	res.render('index'); 
-// });
-
-
-// // LOGIN 
-// router.get('/api/login', function(req, res) {
-//     res.render('login', { message: req.flash('loginMessage') }); 
-// });
-
-// // SIGNUP 
-// router.get('/api/signup', function(req, res) {
-//     res.render('signup.ejs', { message: req.flash('signupMessage') });
-// });
-
-
 // LOGOUT 
 router.get('/api/logout', function(req, res) {
     req.logout();

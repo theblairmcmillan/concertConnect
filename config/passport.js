@@ -1,17 +1,17 @@
 'use strict'
 
-var LocalStrategy   = require('passport-local').Strategy;
-var Artist            = require('../models/artists');
+var LocalStrategy = require('passport-local').Strategy;
+var Artist = require('../models/artists').model;
 
 module.exports = function(passport) {
 
     // used to serialize the Artist for the session
-    passport.serializeArtist(function(artist, done) {
-        done(null, artist.id);
+    passport.serializeUser(function(User, done) {
+        done(null, User.id);
     });
 
-    // used to deserialize the Artist
-    passport.deserializeArtist(function(id, done) {
+    // used to deserialize the User
+    passport.deserializeUser(function(id, done) {
         Artist.findById(id, function(err, artist) {
             done(err, artist);
         });
@@ -26,7 +26,6 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, email, password, done) {
-
         // asynchronous
         // Artist.findOne wont fire unless data is sent back
         process.nextTick(function() {

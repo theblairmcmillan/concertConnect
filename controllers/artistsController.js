@@ -26,6 +26,10 @@ module.exports.updateSingleArtist = (req, res) => {
 	ArtistsModel.updateSingleArtist(req, res);
 };
 
+// module.exports.login = (req, res) => {
+// 	ArtistsModel.login(req, res);
+// }
+
 // Signup 
 module.exports.signup = (req, res) => {
 	ArtistsModel.signup(req, res);
