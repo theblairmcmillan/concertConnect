@@ -25,3 +25,14 @@ module.exports.destroy = (req, res) => {
 module.exports.updateSingleHost = (req, res) => {
 	HostsModel.updateSingleHost(req, res);
 };
+
+// LOGIN 
+module.exports.login = (req, res) => {
+	HostsModel.login(req, res);
+}
+
+// SIGNUP
+module.exports.signup = (req, res) => {
+	HostsModel.signup(req, res);
+};
+

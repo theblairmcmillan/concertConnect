@@ -1,10 +1,11 @@
 'use strict';
 // DEPENDENCIES 
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 
 
 // SCHEMA 
-var Hosts = mongoose.model('hosts', mongoose.Schema({
+var hostSchema = mongoose.Schema({
 	name: String,
 	location: String,
 	venue: String,
@@ -12,8 +13,27 @@ var Hosts = mongoose.model('hosts', mongoose.Schema({
 	website: String,
 	accomodations: String,
 	about: String,
-	tel: Number
-}));
+	tel: Number,
+	local: {
+		email: String,
+		password: String
+	}
+});
+
+// GENERATING A HASH 
+hostSchema.methods.generateHash = function(password) {
+	return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+// CHECKING IF PASSWORD IS VALID 
+hostSchema.methods.validPassword = function(password) {
+	console.log("is valid host???", password);
+	console.log("local host pass", this.local.password);
+	return bcrypt.compareSync(password, this.local.password);
+};
+
+var Hosts = mongoose.model('hosts', hostSchema);
+
 
 
 //RETURN MODEL 
