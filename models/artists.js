@@ -14,23 +14,11 @@ var artistSchema = mongoose.Schema({
 	website: String,
 	about: String,
 	tel: Number,
-	local: {
-		email: String,
-		password: String
-	}
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
+    }
 });
-
-// generating a hash
-artistSchema.methods.generateHash = function(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
-
-// checking if password is valid
-artistSchema.methods.validPassword = function(password) {
-	console.log("is valid???", password);
-	console.log("local password:", this.local.password)
-    return bcrypt.compareSync(password, this.local.password);
-};
 
 var Artists = mongoose.model('artists', artistSchema);
 
@@ -54,7 +42,7 @@ module.exports.createArtist = (req, res) => {
 	})
 }
 
-// GET SINGLE ARTIST
+// GET SINGLE User
 module.exports.getSingleArtist = (req, res) => {
 	// console.log(req.params.id)
 	Artists.find({id: req.params.id }, (err, artist) => {
@@ -70,7 +58,7 @@ module.exports.destroy = (req, res) => {
 		if (err) throw err;
 		artist.remove(function(err){
 			if (err) throw err;
-			console.log("user/artist deleted!");
+			console.log("artist/artist deleted!");
 		})
 	})
 };
@@ -84,16 +72,3 @@ module.exports.updateSingleArtist = (req, res) => {
 		res.send('Found by Id and Updated!')
 	})
 };
-
-
-
-
-
-
-
-
-
-
-
-
-

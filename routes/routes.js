@@ -6,6 +6,7 @@ var passport = require('passport');
 
 
 //MODELS 
+var users = require('./users.routes');
 var artists = require('./artists.routes');
 var hosts = require('./hosts.routes');
 
@@ -18,8 +19,10 @@ router.get('/api/logout', function(req, res) {
 
 
 //ROUTES 
+router.use(users);
 router.use(artists);
 router.use(hosts);
+
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
