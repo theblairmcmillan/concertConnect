@@ -17,5 +17,9 @@ app.config(function($routeProvider) {
         	templateUrl: "app/hostView/hostView.html",
         	controller: "hostViewController"
         })
+        .when('/accountSetup',{
+            templateUrl: 'app/accountSetup/accountSetupView.html',
+            controller: 'accountSetupController.js'
+        })
     .otherwise({ redirectTo: '/login' });
 });

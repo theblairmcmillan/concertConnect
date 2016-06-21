@@ -37,7 +37,7 @@ app.controller("loginController", ["$scope", "$location","$http", "userFactory",
 			if (data.success === true){
 				console.log("user:", data.user);
 				userFactory.setUserData(data.user);
-				$location.path('/artists')
+				$location.path('/accountSetup')
 			} else {
 				console.log(data.message);
 			}
