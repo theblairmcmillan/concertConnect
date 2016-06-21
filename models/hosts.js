@@ -13,28 +13,10 @@ var hostSchema = mongoose.Schema({
 	website: String,
 	accomodations: String,
 	about: String,
-	tel: Number,
-	local: {
-		email: String,
-		password: String
-	}
+	tel: Number
 });
 
-// GENERATING A HASH 
-hostSchema.methods.generateHash = function(password) {
-	return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
-
-// CHECKING IF PASSWORD IS VALID 
-hostSchema.methods.validPassword = function(password) {
-	console.log("is valid host???", password);
-	console.log("local host pass", this.local.password);
-	return bcrypt.compareSync(password, this.local.password);
-};
-
 var Hosts = mongoose.model('hosts', hostSchema);
-
-
 
 //RETURN MODEL 
 module.exports.model = Hosts;

@@ -2,7 +2,7 @@
 // DEPENDENCIES 
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
-
+var Users = require('./users').model;
 
 // SCHEMA 
 var artistSchema = mongoose.Schema({
@@ -14,23 +14,8 @@ var artistSchema = mongoose.Schema({
 	website: String,
 	about: String,
 	tel: Number,
-	local: {
-		email: String,
-		password: String
-	}
+	image: String
 });
-
-// generating a hash
-artistSchema.methods.generateHash = function(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
-
-// checking if password is valid
-artistSchema.methods.validPassword = function(password) {
-	console.log("is valid???", password);
-	console.log("local password:", this.local.password)
-    return bcrypt.compareSync(password, this.local.password);
-};
 
 var Artists = mongoose.model('artists', artistSchema);
 
@@ -48,13 +33,18 @@ module.exports.index = (req, res) => {
 // CREATE ARTIST
 module.exports.createArtist = (req, res) => {
 	// console.log(req.params)
-	Artists.create(req.params, (err) => {
+	console.log("artist params:", req.body);
+	var newArtist = new Artists(req.body);
+	newArtist.save();
+
+	Users.findByIdAndUpdate(req.body.user, {$set:{artist:newArtist}}, (err, data) => {
+		console.log(">>>>",newArtist.image);
 		if (err) throw err;
-		res.send('Created new artist!')
+		res.send('All good!')
 	})
 }
 
-// GET SINGLE ARTIST
+// GET SINGLE User
 module.exports.getSingleArtist = (req, res) => {
 	// console.log(req.params.id)
 	Artists.find({id: req.params.id }, (err, artist) => {
@@ -70,7 +60,7 @@ module.exports.destroy = (req, res) => {
 		if (err) throw err;
 		artist.remove(function(err){
 			if (err) throw err;
-			console.log("user/artist deleted!");
+			console.log("artist/artist deleted!");
 		})
 	})
 };
@@ -84,16 +74,3 @@ module.exports.updateSingleArtist = (req, res) => {
 		res.send('Found by Id and Updated!')
 	})
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
