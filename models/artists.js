@@ -2,7 +2,7 @@
 // DEPENDENCIES 
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
-
+var Users = require('./users').model;
 
 // SCHEMA 
 var artistSchema = mongoose.Schema({
@@ -14,10 +14,7 @@ var artistSchema = mongoose.Schema({
 	website: String,
 	about: String,
 	tel: Number,
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
-    }
+	image: String
 });
 
 var Artists = mongoose.model('artists', artistSchema);
@@ -36,9 +33,14 @@ module.exports.index = (req, res) => {
 // CREATE ARTIST
 module.exports.createArtist = (req, res) => {
 	// console.log(req.params)
-	Artists.create(req.params, (err) => {
+	console.log("artist params:", req.body);
+	var newArtist = new Artists(req.body);
+	newArtist.save();
+
+	Users.findByIdAndUpdate(req.body.user, {$set:{artist:newArtist}}, (err, data) => {
+		console.log(">>>>",newArtist.image);
 		if (err) throw err;
-		res.send('Created new artist!')
+		res.send('All good!')
 	})
 }
 

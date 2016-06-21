@@ -11,7 +11,15 @@ var userSchema = mongoose.Schema({
 	local: {
 		email: String,
 		password: String
-	}
+	},
+	artist: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'artists'
+    },
+    host: {
+       	type: mongoose.Schema.Types.ObjectId,
+        ref: 'hosts'
+    }
 });
 
 // generating a hash

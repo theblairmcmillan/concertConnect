@@ -1,6 +1,6 @@
 "use strict";
 
-let app = angular.module("concertConnect", ["ngRoute"]);
+let app = angular.module("concertConnect", ["ngRoute", "ngFileUpload"]);
 
 app.config(function($routeProvider) {
 

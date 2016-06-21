@@ -13,11 +13,7 @@ var hostSchema = mongoose.Schema({
 	website: String,
 	accomodations: String,
 	about: String,
-	tel: Number,
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
-    }
+	tel: Number
 });
 
 var Hosts = mongoose.model('hosts', hostSchema);

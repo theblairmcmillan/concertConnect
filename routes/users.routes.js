@@ -13,27 +13,41 @@ router.delete('/api/users/:id', controller.destroy);
 router.post('/api/users/:id', controller.updateSingleUser);
 
 // process the signup form
-router.post('/api/signup/users', passport.authenticate('local-signup', {
-	successRedirect : '/#/artists', // redirect to the secure profile section
-	failureRedirect : '/#/login', // redirect back to the signup page if there is an error
-	failureFlash : true // allow flash messages
-}));
-
-router.post('/api/login/users', function(req, res, next) {
-	passport.authenticate('local-login', function(err, user, info) {
+router.post('/api/signup/users', function(req, res, next) {
+	passport.authenticate('local-signup', function(err, user) {
 		if (err) {
 		  return next(err); // will generate a 500 error
 		}
+		console.log("---", user);
 		// Generate a JSON response reflecting authentication status
 		if (!user) {
-		  return res.redirect("/#/login");
+		  return res.send({ success : false, message : 'Signup failed. Please try again.' });
 		}
 
 		req.login(user, loginErr => {
 		  if (loginErr) {
 		    return next(loginErr);
 		  }
-		  return res.redirect("/#/artists");
+		  return res.send({ success : true, message : 'authentication succeeded', user: user });
+		});      
+	})(req, res, next);
+});
+
+router.post('/api/login/users', function(req, res, next) {
+	passport.authenticate('local-login', function(err, user) {
+		if (err) {
+		  return next(err); // will generate a 500 error
+		}
+		// Generate a JSON response reflecting authentication status
+		if (!user) {
+		  return res.send({ success : false, message : 'Email or password is incorrect.' });
+		}
+
+		req.login(user, loginErr => {
+		  if (loginErr) {
+		    return next(loginErr);
+		  }
+		  return res.send({ success : true, message : 'authentication succeeded', user: user });
 		});      
 	})(req, res, next);
 });
