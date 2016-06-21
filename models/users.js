@@ -80,10 +80,9 @@ module.exports.destroy = (req, res) => {
 
 // GET SINGLE ARTIST BY ID AND UPDATE
 module.exports.updateSingleUser = (req, res) => {
-	// console.log(req.params)
-	Users.findByIdAndUpdate(req.params.id, req.params, (err, user) => {
+	Users.findByIdAndUpdate(req.params.id, req.body, (err, user) => {
 		if (err) throw err;
-		res.send('Found by Id and Updated!')
+		res.send('Found user by id and updated!')
 	})
 };
 

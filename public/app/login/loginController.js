@@ -1,7 +1,5 @@
 "use strict";
 app.controller("loginController", ["$scope", "$location","$http", "userFactory", function ($scope, $location, $http, userFactory) {
-	console.log("got to login controller!");
-
 
 	$scope.login = (email, password) => {
 		$http({

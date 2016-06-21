@@ -18,8 +18,8 @@ app.config(function($routeProvider) {
         	controller: "hostViewController"
         })
         .when('/accountSetup',{
-            templateUrl: 'app/accountSetup/accountSetupView.html',
-            controller: 'accountSetupController.js'
+            templateUrl: "app/accountSetup/accountSetupView.html",
+            controller: "accountSetupController"
         })
     .otherwise({ redirectTo: '/login' });
 });
