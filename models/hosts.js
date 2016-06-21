@@ -2,6 +2,7 @@
 // DEPENDENCIES 
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
+var Users = require('./users').model;
 
 
 // SCHEMA 
@@ -30,10 +31,13 @@ module.exports.index = (req, res) => {
 
 // CREATE HOST 
 module.exports.createHost = (req, res) => {
-	console.log(req.params)
-	Hosts.create(req.params, (err) => {
+	console.log("host params", req.body);
+	var newHost = new Hosts(req.body);
+	newHost.save();
+
+	Users.findByIdAndUpdate(req.body.user, {$set:{host:newHost}}, (err, data) => {
 		if (err) throw err;
-		res.send('Created new host!')
+		res.send(newHost)
 	})
 };
 

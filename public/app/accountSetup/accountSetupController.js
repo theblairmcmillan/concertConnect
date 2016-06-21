@@ -24,11 +24,12 @@ app.controller("accountSetupController", ["$scope", "$location","$http", "$route
 					},
 				}).success(function(data){
 					console.log("This shit worked", data);
-					$location.path('/artists')
+					// $location.path('/artists')
 				})
 			})
 		} // END if artistCheckbox is true...
 
+		// HOST checkout is true ... 
 		if (hostCheckbox == true) {
 			$http({
 				method: 'POST',
@@ -41,16 +42,26 @@ app.controller("accountSetupController", ["$scope", "$location","$http", "$route
 				console.log("new host info:::", host);
 				$http({
 					method: 'PUT',
-					url: `/api/users/${currentuser._id}`,
+					url: `/api/users/${currentUser._id}`,
 					data: {
 						is_host: true
 					},
 				}).success(function(data){
 					console.log("This host function worked", data);
-					location.path('/hosts')
+					// $location.path('/hosts')
 				})
 			})
-		}
+		} 
 
 	};
 }]);
+
+
+
+
+
+
+
+
+
+
