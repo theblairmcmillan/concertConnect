@@ -3,6 +3,8 @@ app.controller("accountSetupController", ["$scope", "$location","$http", "$route
 
 	var currentUser = userFactory.getUserData();
 
+
+
 	$scope.setupAccount = function(artistCheckbox, hostCheckbox, artistName, hostName) {
 		console.log("artist account request status", artistCheckbox, artistName);
 		// console.log("host account request status", hostCheckbox);
@@ -24,7 +26,7 @@ app.controller("accountSetupController", ["$scope", "$location","$http", "$route
 					},
 				}).success(function(data){
 					console.log("This shit worked", data);
-					// $location.path('/artists')
+					$location.path('/artists')
 				})
 			})
 		} // END if artistCheckbox is true...
@@ -48,12 +50,14 @@ app.controller("accountSetupController", ["$scope", "$location","$http", "$route
 					},
 				}).success(function(data){
 					console.log("This host function worked", data);
-					// $location.path('/hosts')
+					$location.path('/hosts')
 				})
-			})
+			}) 
 		} 
-
 	};
+
+
+
 }]);
 
 
