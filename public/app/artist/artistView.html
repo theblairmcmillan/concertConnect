@@ -16,53 +16,57 @@
     </div> <!-- END OF NAVBAR -->
 
     <div class="mainContainer">
-        </div class="row topRow">
-            <div class="col-sm-2 col-md-2" id="photo">photo
-                <a class="btn btn-default" role="button" id="addImageButton" ngf-select="upload($file)">upload image</a>
+        <div class="row topRow">
+            <div class="col-sm-2 col-md-2" id="photo">
+                <img src="icons/image.png" height="30px" width="30px" id="addImageButton" ngf-select="upload($file)">
+                <div><img src="{{currentUser.artist.image}}" height="60px"></div>
+                <div>{{currentUser.artist.name}}</div>
+                <div>{{currentUser.is_artist}}</div>
             </div>
-            <div class="col-sm-6 col-md-6" id="vitals">vitals</div>
-            <div class="col-sm-4 col-md-4" id="vitals">blurb</div>
+            <div class="col-sm-6 col-md-6" id="stats">
+                <img src="icons/form.png" height="20px" width="20px" id="statsButton" data-toggle="modal" data-target=".statsmodal">
+                <div>{{currentUser.artist.hometown}}</div>
+                <div>{{currentUser.artist.age}}</div>
+                <div>{{currentUser.artist.genre}}</div>
+                <div>{{currentUser.artist.group_size}}</div>
+                <div>{{currentUser.artist.website}}</div>
+                <div>{{currentUser.artist.tel}}</div>
+            </div>
+            <div class="col-sm-4 col-md-4" id="bio">
+                 <img src="icons/form.png" height="20px" width="20px" id="bioButton" data-toggle="modal" data-target=".aboutmodal">
+            </div>
         </div> <!-- END OF TOP ROW -->
-
-        </div class="row midRow">
-            <div class="col-sm-7 col-md-7" id="dates">Dates</div>
-            <div class="col-sm-5 col-md-5" id="map">Map</div>
-        </div> <!-- END OF MID ROW -->
-
-        </div class="row hostsRow">
-            <div class="col-sm-12 col-md-12" id="photo">carosel of host photos</div>
-        </div> <!-- END OF host ROW -->
-        
-         </div class="row artistRow">
-            <div class="col-sm-12 col-md-12" id="photo">another carosel of artist photos</div>
-        </div> <!-- END OF artist ROW -->
-        
-        <div class="footer">
-            <footer >
-                <p>&copy; Hive</p>
-            </footer>
-        </div>
-
-
-
-
-
     </div> <!-- END OF MAIN CONTAINER -->
 
+    <!--STATS MODAL -->
+    <div class="modal fade statsmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            Please input some of you vital stats
+            hometown: <input class="form-control" type="text" name="hometown" placeholder="hometown" ng-model="hometown">
+            age: <input class="form-control" type="text" name="age" placeholder="age" ng-model="age">
+            genre: <input class="form-control" type="text" name="genre" placeholder="genre" ng-model="genre">
+            group Size: <input class="form-control" type="text" name="groupsize" placeholder="group size" ng-model="group_size">
+            website: <input class="form-control" type="text" name="website" placeholder="website" ng-model="website">
+            tel: <input class="form-control" type="number" name="tel" placeholder="tel" ng-model="tel">
+            <a class="btn btn-default" href="#" role="button" data-dismiss="modal" ng-click="updatestats(hometown, age, genre, group_size, website, tel)">save</a>
+            </div>
+        </div>
+    </div>
 
 
-
-
-
-
-
-
-
-
-
-
+    <div class="modal fade aboutmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            Tel us some more about yourself. 
+            <input class="form-control" type="text" name="about" placeholder="We are a lovely bunch of folkies etc..etc..etc...">
+            <a class="btn btn-default" href="#" role="button" data-dismiss="modal">save</a>
+            </div>
+        </div>
+    </div>
 
 
 
 
 </div> <!-- END OF PARTIAL -->
+

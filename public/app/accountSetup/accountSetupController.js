@@ -1,8 +1,12 @@
 "use strict";
-app.controller("accountSetupController", ["$scope", "$location","$http", "$routeParams", "Upload","userFactory", function ($scope, $location, $http, $routeParams, Upload, userFactory) {
+app.controller("accountSetupController", ["$scope", "$location","$http", "$routeParams", "$timeout", "Upload", "userFactory", 
+function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory) {
 
-	var currentUser = userFactory.getUserData();
-
+	var currentUser = {};
+	$timeout(function() {
+		currentUser = userFactory.getUserData()
+		console.log("USER DATA:", currentUser);
+	}, 2000);
 
 
 	$scope.setupAccount = function(artistCheckbox, hostCheckbox, artistName, hostName) {

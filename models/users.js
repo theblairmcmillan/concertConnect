@@ -45,7 +45,7 @@ module.exports.index = (req, res) => {
 		if (err) throw err;
 		res.send(users)
 	})
-}
+};
 
 // CREATE ARTIST
 module.exports.createUser = (req, res) => {
@@ -59,8 +59,9 @@ module.exports.createUser = (req, res) => {
 // GET SINGLE User
 module.exports.getSingleUser = (req, res) => {
 	// console.log(req.params.id)
-	Users.find({id: req.params.id }, (err, user) => {
+	Users.findById(req.params.id).populate('artist').populate('host').exec(function(err, user) {
 		if (err) throw err;
+		console.log("get one:::", user);
 		res.send(user);
 	})
 };
@@ -68,7 +69,7 @@ module.exports.getSingleUser = (req, res) => {
 // DELETE ARTIST BY ID
 module.exports.destroy = (req, res) => {
 	// console.log(req.params)
-	Users.find({id: req.params.id }, (err, user) => {
+	Users.findById(req.params.id, (err, user) => {
 		if (err) throw err;
 		user.remove(function(err){
 			if (err) throw err;
@@ -82,7 +83,7 @@ module.exports.destroy = (req, res) => {
 module.exports.updateSingleUser = (req, res) => {
 	Users.findByIdAndUpdate(req.params.id, req.body, (err, user) => {
 		if (err) throw err;
-		res.send('Found user by id and updated!')
+		res.send(user)
 	})
 };
 

@@ -44,7 +44,7 @@ module.exports.createHost = (req, res) => {
 // GET SINGLE HOST 
 module.exports.getSingleHost = (req, res) => {
 	console.log(req.params.id)
-	Hosts.find({id: req.params.id }, (err, host) => {
+	Hosts.findById(req.params.id, (err, host) => {
 		if (err) throw err;
 		res.send(host);
 	})
@@ -53,7 +53,7 @@ module.exports.getSingleHost = (req, res) => {
 // DELETE HOST BY ID
 module.exports.destroy = (req, res) => {
 	console.log(req.params)
-	Hosts.find({id: req.params.id }, (err, host) => {
+	Hosts.findById(req.params.id, (err, host) => {
 		if (err) throw err;
 		host.remove(function(err){
 			if (err) throw err;
