@@ -1,4 +1,29 @@
+html, body {
+  height:100%;
+  width: 100%;
+};
 
+
+/*************************
+NAV BAR STYLING LOGIN PAGE
+*************************/
+#custom-bootstrap-menu.loginPage {
+    font-size: 14px;
+    background-color: rgba(36, 36, 35, 0);
+    border-width: 0px;
+    border-radius: 0px;
+    margin-bottom: 0;
+    color: #fff;
+}
+#custom-bootstrap-menu.loginPage .navbar-nav>li>a {
+  color: rgba(245, 203, 92, 1);
+}
+
+#custom-bootstrap-menu.loginPage .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.loginPage .navbar-nav>li>a:focus {
+    color: rgba(36, 36, 35, 1);
+    background-color: rgba(245, 203, 92, 1);
+}
 
 
 /****************
@@ -6,13 +31,14 @@ NAV BAR STYLING
 ****************/
 
 #custom-bootstrap-menu.navbar-default .navbar-brand {
-    color: rgba(245, 203, 92, 1);
+    color: #F5CB5C;
 }
 #custom-bootstrap-menu.navbar-default {
     font-size: 14px;
     background-color: rgba(36, 36, 35, 1);
     border-width: 0px;
     border-radius: 0px;
+    margin-bottom: 0;
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
     color: rgba(232, 237, 223, 1);
@@ -48,38 +74,98 @@ NAV BAR STYLING
 LOGIN CONTAINER STYLE
 **************/
 
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-}
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
+.loginModal .modal-content .signupModal {
+  height: 200px;
+  text-align: center;
+  border-radius: 0;
+  text-align: center;
+  opacity: 0.9;
 }
 
-.form-signin .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+.form-group {
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+ }
+
+.form-group > button {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-.form-signin .form-control:focus {
-  z-index: 2;
+.form-control {
+  margin-bottom: 5px;
+
 }
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#main-view {
+  height: 100%;
 }
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+#loginView {
+  background-image: url("../icons/homepage.jpg");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  z-index: -1;
 }
+
+#title {
+  z-index: 1;
+}
+
+#mainloginWindow img {
+  height: 50%;
+  width: 50%;
+}
+
+#mainloginWindow {
+  text-align: center;
+  margin: 20% auto;
+}
+
+
+
+
+
+
 
 /**************************
 main container
