@@ -12,8 +12,7 @@ app.controller("loginController", ["$scope", "$location","$http", "userFactory",
 		}).success(function(data) {
 			console.log("data from login!>>", data.message);
 			if (data.success === true) {
-				console.log("user: ", data.user);
-				userFactory.setUserData(data.user);
+				userFactory.setUserData(data.user._id);
 				$location.path('/artists')
 			} else {
 				console.log(data.message);
@@ -33,8 +32,7 @@ app.controller("loginController", ["$scope", "$location","$http", "userFactory",
 		}).success(function(data){
 			console.log("data from signin!>>", data.message);
 			if (data.success === true){
-				console.log("user:", data.user);
-				userFactory.setUserData(data.user);
+				userFactory.setUserData(data.user._id);
 				$location.path('/accountSetup')
 			} else {
 				console.log(data.message);

@@ -46,7 +46,7 @@ module.exports.createArtist = (req, res) => {
 // GET SINGLE User
 module.exports.getSingleArtist = (req, res) => {
 	// console.log(req.params.id)
-	Artists.find({id: req.params.id }, (err, artist) => {
+	Artists.findById(req.params.id, (err, artist) => {
 		if (err) throw err;
 		res.send(artist);
 	})
@@ -55,7 +55,7 @@ module.exports.getSingleArtist = (req, res) => {
 // DELETE ARTIST BY ID
 module.exports.destroy = (req, res) => {
 	// console.log(req.params)
-	Artists.find({id: req.params.id }, (err, artist) => {
+	Artists.findById(req.params.id, (err, artist) => {
 		if (err) throw err;
 		artist.remove(function(err){
 			if (err) throw err;
@@ -67,9 +67,10 @@ module.exports.destroy = (req, res) => {
 
 // GET SINGLE ARTIST BY ID AND UPDATE
 module.exports.updateSingleArtist = (req, res) => {
-	// console.log(req.params)
-	Artists.findByIdAndUpdate(req.params.id, req.params, (err, artist) => {
+	console.log("body", req.body);
+	console.log("params", req.params);
+	Artists.findByIdAndUpdate(req.params.id, req.body, (err, artist) => {
 		if (err) throw err;
-		res.send('Found by Id and Updated!')
+		res.send(artist)
 	})
 };

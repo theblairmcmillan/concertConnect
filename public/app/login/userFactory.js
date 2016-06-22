@@ -1,16 +1,26 @@
 "use strict";
 
-app.factory('userFactory', ["$location", function ($location) {
+app.factory('userFactory', ["$location","$http", function ($location, $http) {
 
 	var currentUser = {};
+
 
 	return {
 
 		getUserData: function(){
 			return currentUser;
 		}, 
-		setUserData: function(currentUserData){
-			currentUser = currentUserData;
-		}
+		setUserData: function(currentUserId){
+			$http({
+				method: 'GET',
+				url: `/api/users/${currentUserId}`,
+			}).success(function(userData){
+				console.log(userData);
+				currentUser = userData;
+			})
+		},
+
 	};
+
+
 }]);
