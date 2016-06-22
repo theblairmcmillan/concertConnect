@@ -30,7 +30,7 @@ app.controller("loginController", ["$scope", "$location","$http", "userFactory",
 				password: signupPassword
 			},
 		}).success(function(data){
-			console.log("data from signin!>>", data.message);
+			console.log("data from signin!>>", data);
 			if (data.success === true){
 				userFactory.setUserData(data.user._id);
 				$location.path('/accountSetup')

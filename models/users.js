@@ -50,9 +50,9 @@ module.exports.index = (req, res) => {
 // CREATE ARTIST
 module.exports.createUser = (req, res) => {
 	// console.log(req.params)
-	Users.create(req.params, (err) => {
+	Users.create(req.params, (err, user) => {
 		if (err) throw err;
-		res.send('Created new user!')
+		res.send(user)
 	})
 }
 
