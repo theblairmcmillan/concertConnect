@@ -1,6 +1,5 @@
 "use strict";
 app.controller("artistViewController", ["$scope", "$location","$http", "$routeParams", "Upload","userFactory", function ($scope, $location, $http, $routeParams, Upload, userFactory) {
-	console.log("got to artist view controller");
 
 	var currentUser = userFactory.getUserData();
 

@@ -38,9 +38,8 @@ module.exports.createArtist = (req, res) => {
 	newArtist.save();
 
 	Users.findByIdAndUpdate(req.body.user, {$set:{artist:newArtist}}, (err, data) => {
-		console.log(">>>>",newArtist.image);
 		if (err) throw err;
-		res.send('All good!')
+		res.send(newArtist)
 	})
 }
 

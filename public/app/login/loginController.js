@@ -1,7 +1,5 @@
 "use strict";
 app.controller("loginController", ["$scope", "$location","$http", "userFactory", function ($scope, $location, $http, userFactory) {
-	console.log("got to login controller!");
-
 
 	$scope.login = (email, password) => {
 		$http({
@@ -37,7 +35,7 @@ app.controller("loginController", ["$scope", "$location","$http", "userFactory",
 			if (data.success === true){
 				console.log("user:", data.user);
 				userFactory.setUserData(data.user);
-				$location.path('/artists')
+				$location.path('/accountSetup')
 			} else {
 				console.log(data.message);
 			}

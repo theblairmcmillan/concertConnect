@@ -10,7 +10,7 @@ router.get('/api/users', controller.index);
 router.post('/api/users', controller.createUser);
 router.get('/api/users/:id', controller.getSingleUser);
 router.delete('/api/users/:id', controller.destroy);
-router.post('/api/users/:id', controller.updateSingleUser);
+router.put('/api/users/:id', controller.updateSingleUser);
 
 // process the signup form
 router.post('/api/signup/users', function(req, res, next) {
