@@ -59,7 +59,19 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 		})
 	};
 
-	// $scope.updateAbout = function()
+	$scope.updateAbout = function(updateAboutField){
+		console.log("got inside update about");
+		$http({
+			method: 'POST',
+			url: `/api/artists/${$scope.currentUser.artist._id}`,
+			data: {
+				about: updateAboutField
+			}
+		}).success(function(data){
+			$scope.currentUser.artist.about = data.about;
+			userFactory.setUserData($scope.currentUser._id);
+		})
+	};
 
 
 

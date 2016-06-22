@@ -34,6 +34,7 @@
             </div>
             <div class="col-sm-4 col-md-4" id="bio">
                  <img src="icons/form.png" height="20px" width="20px" id="bioButton" data-toggle="modal" data-target=".aboutmodal">
+                 <p>{{currentUser.artist.about}}</p>
             </div>
         </div> <!-- END OF TOP ROW -->
         <div class="row midRow">
@@ -73,8 +74,8 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
             Tel us some more about yourself. 
-            <input class="form-control" type="text" name="about" placeholder="We are a lovely bunch of folkies etc..etc..etc...">
-            <a class="btn btn-default" href="#" role="button" data-dismiss="modal">save</a>
+            <input class="form-control" type="text" name="about" placeholder="We are a lovely bunch of folkies etc..etc..etc..." ng-model="updateAboutField">
+            <a class="btn btn-default" href="#" role="button" data-dismiss="modal" ng-click="updateAbout(updateAboutField)">save</a>
             </div>
         </div>
     </div>
