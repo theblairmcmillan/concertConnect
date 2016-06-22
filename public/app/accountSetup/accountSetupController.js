@@ -6,7 +6,7 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 	$timeout(function() {
 		currentUser = userFactory.getUserData()
 		console.log("USER DATA:", currentUser);
-	}, 2000);
+	}, 1000);
 
 
 	$scope.setupAccount = function(artistCheckbox, hostCheckbox, artistName, hostName) {
@@ -30,6 +30,7 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 					},
 				}).success(function(data){
 					console.log("This shit worked", data);
+					userFactory.setUserData(currentUser._id);
 					$location.path('/artists')
 				})
 			})
@@ -54,6 +55,7 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 					},
 				}).success(function(data){
 					console.log("This host function worked", data);
+					userFactory.setUserData(currentUser._id);
 					$location.path('/hosts')
 				})
 			}) 

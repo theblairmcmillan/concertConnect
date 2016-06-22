@@ -1,4 +1,4 @@
-<div id="loginView">
+<div id="artistView">
 
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
         <div class="container-fluid">
@@ -25,17 +25,30 @@
             </div>
             <div class="col-sm-6 col-md-6" id="stats">
                 <img src="icons/form.png" height="20px" width="20px" id="statsButton" data-toggle="modal" data-target=".statsmodal">
-                <div>{{currentUser.artist.hometown}}</div>
-                <div>{{currentUser.artist.age}}</div>
-                <div>{{currentUser.artist.genre}}</div>
-                <div>{{currentUser.artist.group_size}}</div>
-                <div>{{currentUser.artist.website}}</div>
-                <div>{{currentUser.artist.tel}}</div>
+                <div>Hometown: {{currentUser.artist.hometown}}</div>
+                <div>Age: {{currentUser.artist.age}}</div>
+                <div>Genre: {{currentUser.artist.genre}}</div>
+                <div>Group size: {{currentUser.artist.group_size}}</div>
+                <div>Website: {{currentUser.artist.website}}</div>
+                <div>Tel: {{currentUser.artist.tel}}</div>
             </div>
             <div class="col-sm-4 col-md-4" id="bio">
                  <img src="icons/form.png" height="20px" width="20px" id="bioButton" data-toggle="modal" data-target=".aboutmodal">
             </div>
         </div> <!-- END OF TOP ROW -->
+        <div class="row midRow">
+            <div class="col-sm-6 col-md-6 dates">
+                
+            </div> <!-- END OF DATES COL -->
+
+            <div class="col-sm-6 col-md-6 bandcamp">
+                <img src="../icons/bandcamp.png" data-toggle="modal" data-target=".bandcampmodal" height="40px" width="40px">
+                
+            </div>
+            
+
+
+        </div> <!-- END OF MID ROW -->
     </div> <!-- END OF MAIN CONTAINER -->
 
     <!--STATS MODAL -->
@@ -55,6 +68,7 @@
     </div>
 
 
+    <!-- BIO MODAL -->
     <div class="modal fade aboutmodal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -64,6 +78,16 @@
             </div>
         </div>
     </div>
+
+    <!-- bandcamp modal-->
+    <div class="modal fade bandcampmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+        <input class="form-control" type="text" name="bandcamp" placeholder="bandcamp iframe" ng-model="bandcamp">
+        <a class="btn btn-default" href="#" role="button" data-dismiss="modal" ng-click="">save</a>
+    </div>
+  </div>
+</div>
 
 
 

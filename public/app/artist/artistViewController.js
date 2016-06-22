@@ -6,7 +6,7 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 	$timeout(function() {
 		$scope.currentUser = userFactory.getUserData()
 		console.log(">>>>", $scope.currentUser);
-	}, 1000);
+	}, 2000);
 
 
 	
@@ -58,6 +58,8 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 
 		})
 	};
+
+	// $scope.updateAbout = function()
 
 
 
