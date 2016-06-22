@@ -106,7 +106,7 @@ ACCOUNT SET UP MAIN CONTAINER
 #accountSetupView {
   font-family: helvetica;
   text-align: center;
-  color: white;
+  color: #333533;
   background-image: url('../icons/crowd.jpg');
   height: 100%;
   width: 100%;
@@ -122,6 +122,7 @@ ACCOUNT SET UP MAIN CONTAINER
   margin-left: 10%;
   margin-right: 10%;
 
+
 }
 
 #activateHost img {
@@ -131,9 +132,15 @@ ACCOUNT SET UP MAIN CONTAINER
 #setupAccounts {
   text-align: center;
 
-
 }
 
+#selectAcountsBox {
+  background-color: #CFDBD5;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+
+}
 
 
 
