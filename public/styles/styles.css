@@ -99,8 +99,40 @@ LOGIN CONTAINER STYLE
 
 
 
+/******************************
+ACCOUNT SET UP MAIN CONTAINER
+********************************/
+
+#accountSetupView {
+  font-family: helvetica;
+  text-align: center;
+  color: white;
+  background-image: url('../icons/crowd.jpg');
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  z-index: -1;
+}
+}
+
+#topRow div {
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+
+#activateHost img {
+  margin-top: 45px;
+}
+
+#setupAccounts {
+  text-align: center;
 
 
+}
 
 
 
@@ -167,9 +199,6 @@ LOGIN CONTAINER STYLE
 
 
 
-/**************************
-main container
-***************************/
 
 
 /**************************

@@ -16,28 +16,22 @@
     </div> <!-- END OF NAVBAR -->
 
     <div class="mainContainer">
-        <h1>  Active one or both types of account</h1>
+        <h2>Active one or both types of account.</h2>
         <div class="row topRow">
             <div class="col-sm-6 col-md-6" id="activateArtist">
-                <h2>Activate an Artist Account<h2>
-                <div class="checkbox">
-                    <label>
-                    <input type="checkbox" id="artistCheckbox" value="artistAccount" aria-label="..." ng-model="artistCheckbox">
-                    </label>
-                    <input type="text" name="artisName" value="" ng-model="artistName" placeholder="Artist Name eg: Ryan Adams">
-                </div>
+                <h2>Artist<h2>
+                <input type="checkbox" id="artistCheckbox" value="artistAccount" aria-label="..." ng-model="artistCheckbox">
+                <img src="../icons/bee.png">
+                <input class="form-control inputs" type="text" name="artisName" value="" ng-model="artistName" placeholder="Artist Name" required>
             </div>
-            <div class="col-sm-6 col-md-6" id="activateArtist">
-                <h2>Activate a Host Account<h2>
-                <div class="checkbox">
-                    <label>
-                    <input type="checkbox" id="hostCheckbox" value="hostAccount" aria-label="..." ng-model="hostCheckbox">
-                    <input type="text" name="artisName" value="" ng-model="hostName" placeholder="Concert Name eg: Songs from the shed">
-                    </label>
-                </div>
+            <div class="col-sm-6 col-md-6" id="activateHost">
+                <h2>Host<h2>
+                <input type="checkbox" id="hostCheckbox" value="hostAccount" aria-label="..." ng-model="hostCheckbox">
+                <img src="../icons/host2.png" height="150px" width="150px">
+                <input class="form-control inputs" type="text" name="artisName" value="" ng-model="hostName" placeholder="Concert Series Name" required>
             </div>
-            <button class="btn btn-default" type="button" id="setupAccounts" ng-click="setupAccount(artistCheckbox, hostCheckbox, artistName, hostName)">Continue</button>
         </div>
+            <button class="btn btn-default" type="button" id="setupAccounts" ng-click="setupAccount(artistCheckbox, hostCheckbox, artistName, hostName)">Continue</button>
     </div>
 </div>
 
