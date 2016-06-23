@@ -7,6 +7,7 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 	$timeout(function() {
 		$scope.currentUser = userFactory.getUserData();
 		$("#bandcamp").html($scope.currentUser.artist.bandcamp)
+		$("#twitter").html($scope.currentUser.artist.twitter)
 		console.log(">>>>", $scope.currentUser);
 	}, 2000);
 
@@ -92,12 +93,21 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 		})
 	};
 
-
-
-
-
-
-
+	// UPDATE TWITTER //
+	$scope.twitterUpload = function(twitterString){
+		console.log("got inside twitter upload");
+		$http({
+			method: 'POST',
+			url: `/api/artists/${$scope.currentUser.artist._id}`,
+			data: {
+				twitter: twitterString
+			}
+		}).success(function(data){
+			console.log("twittersuccess", data);
+			$("twitter").html(data.twitter)
+			userFactory.setUserData($scope.currentUser._id);
+		})
+	};
 
 }]);
 

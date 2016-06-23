@@ -15,7 +15,8 @@ var artistSchema = mongoose.Schema({
 	about: String,
 	tel: Number,
 	image: String,
-	bandcamp: String
+	bandcamp: String,
+	twitter: String
 });
 
 var Artists = mongoose.model('artists', artistSchema);
