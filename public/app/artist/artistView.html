@@ -42,10 +42,9 @@
                 
             </div> <!-- END OF DATES COL -->
 
-            <div class="col-sm-6 col-md-6 bandcamp">
+            <div class="col-sm-6 col-md-6 bandcamp">        
                 <img src="../icons/bandcamp.png" data-toggle="modal" data-target=".bandcampmodal" height="40px" width="40px">
-                
-            </div>
+                <div id="bandcamp"></div>
             
 
 
@@ -84,8 +83,8 @@
     <div class="modal fade bandcampmodal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm">
         <div class="modal-content">
-        <input class="form-control" type="text" name="bandcamp" placeholder="bandcamp iframe" ng-model="bandcamp">
-        <a class="btn btn-default" href="#" role="button" data-dismiss="modal" ng-click="">save</a>
+        <input class="form-control" type="text" name="bandcamp" placeholder="bandcamp iframe" ng-model="bandcampString">
+        <a class="btn btn-default" href="#" role="button" data-dismiss="modal" ng-click="bandcampUpload(bandcampString)">save</a>
     </div>
   </div>
 </div>
