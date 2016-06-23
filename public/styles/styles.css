@@ -74,18 +74,26 @@ NAV BAR STYLING
 LOGIN CONTAINER STYLE
 **************/
 
+#loginView .modal-content {
+    background-image: url('../icons/foy-vance.jpg');
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
+    color: white;   
+}
+
 .loginModal .modal-content .signupModal {
   height: 200px;
   text-align: center;
   border-radius: 0;
   text-align: center;
-  opacity: 0.9;
 }
 
 .form-group {
   margin-top: 50px;
   margin-left: 20px;
   margin-right: 20px;
+
  }
 
 .form-group > button {
@@ -96,8 +104,6 @@ LOGIN CONTAINER STYLE
   margin-bottom: 5px;
 
 }
-
-
 
 /******************************
 ACCOUNT SET UP MAIN CONTAINER
@@ -116,12 +122,10 @@ ACCOUNT SET UP MAIN CONTAINER
   background-attachment:fixed;
   z-index: -1;
 }
-}
 
 #topRow div {
   margin-left: 10%;
   margin-right: 10%;
-
 
 }
 
@@ -141,34 +145,6 @@ ACCOUNT SET UP MAIN CONTAINER
   margin-top: 10px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #main-view {
@@ -212,36 +188,7 @@ ACCOUNT SET UP MAIN CONTAINER
 Top Row Stuff 
 ***************************/
 
-#photo, #vitals, #blurb {
-    border: 1px solid black;
-    height: 160px;
-    background-color: rgba(207, 219,213, .1);
-} 
 
-/**************************
-Mid Row Stuff 
-***************************/
-
-#dates, #map {
-    border: 1px solid black;
-    height: 350px;
-    background-color: rgba(207, 219,213, .1);
-    margin-top: 5px;
-} 
-
-/**************************
-FOOTER STUFF
-***************************/
-
-.footer {
-    height: 40px;
-    color: yellow;
-    background-color: #242423;
-    clear: both;
-    bottom: 0;
-    position: relative;
-    margin-top: 10px;
-}
 
 
 
