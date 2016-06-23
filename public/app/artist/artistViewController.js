@@ -3,8 +3,10 @@ app.controller("artistViewController", ["$scope", "$location","$http", "$routePa
 function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory) {
 
 	$scope.currentUser = {};
+	$scope.bandcamp = "";
 	$timeout(function() {
-		$scope.currentUser = userFactory.getUserData()
+		$scope.currentUser = userFactory.getUserData();
+		$("#bandcamp").html($scope.currentUser.artist.bandcamp)
 		console.log(">>>>", $scope.currentUser);
 	}, 2000);
 
@@ -59,9 +61,36 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 		})
 	};
 
-	// $scope.updateAbout = function()
+	// UPDATE ABOUT SECTION //
+	$scope.updateAbout = function(updateAboutField){
+		console.log("got inside update about");
+		$http({
+			method: 'POST',
+			url: `/api/artists/${$scope.currentUser.artist._id}`,
+			data: {
+				about: updateAboutField
+			}
+		}).success(function(data){
+			$scope.currentUser.artist.about = data.about;
+			userFactory.setUserData($scope.currentUser._id);
+		})
+	};
 
-
+	// UPDATE BANDCAMP // 
+	$scope.bandcampUpload = function(bandcampString){
+		console.log("got inside bandcamp function");
+		$http({
+			method: 'POST',
+			url: `/api/artists/${$scope.currentUser.artist._id}`,
+			data: {
+				bandcamp: bandcampString
+			}
+		}).success(function(data){
+			console.log(data);
+			$("#bandcamp").html(data.bandcamp)
+			userFactory.setUserData($scope.currentUser._id);
+		})
+	};
 
 
 
