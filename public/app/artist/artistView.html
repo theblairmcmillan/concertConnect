@@ -16,29 +16,33 @@
     </div> <!-- END OF NAVBAR -->
 
     <div class="mainContainer">
-        <div class="row topRow">
+        <div class="row artisttopRow">
             <div class="col-sm-2 col-md-2" id="photo">
-                <img src="icons/image.png" height="30px" width="30px" id="addImageButton" ngf-select="upload($file)">
-                <div><img src="{{currentUser.artist.image}}" height="60px"></div>
+                <p id="addImageButton" ngf-select="upload($file)" id="uploadImagePic">upload photo</p>
+                <div><img src="{{currentUser.artist.image}}" height="160px" width="160px"></div>
                 <div>{{currentUser.is_artist}}</div>
                 <div>{{currentUser.artist.name}}</div>
             </div>
-            <div class="col-sm-6 col-md-6" id="stats">
+
+            <div class="col-sm-5 col-md-5" id="stats">
                 <img src="icons/form.png" height="20px" width="20px" id="statsButton" data-toggle="modal" data-target=".statsmodal">
-                <div>Hometown: {{currentUser.artist.hometown}}</div>
-                <div>Age: {{currentUser.artist.age}}</div>
-                <div>Genre: {{currentUser.artist.genre}}</div>
-                <div>Group size: {{currentUser.artist.group_size}}</div>
-                <div>Website: {{currentUser.artist.website}}</div>
-                <div>Tel: {{currentUser.artist.tel}}</div>
+                <div><span>Hometown:</span> {{currentUser.artist.hometown}}</div>
+                <div><span>Age:</span> {{currentUser.artist.age}}</div>
+                <div><span>Genre:</span> {{currentUser.artist.genre}}</div>
+                <div><span>Group size:</span> {{currentUser.artist.group_size}}</div>
+                <div><span>Website:</span> {{currentUser.artist.website}}</div>
+                <div><span>Tel:</span> {{currentUser.artist.tel}}</div>
             </div>
             <div class="col-sm-4 col-md-4" id="bio">
                  <img src="icons/form.png" height="20px" width="20px" id="bioButton" data-toggle="modal" data-target=".aboutmodal">
                  <p>{{currentUser.artist.about}}</p>
             </div>
         </div> <!-- END OF TOP ROW -->
+
+
+
         <div class="row midRow">
-            <div class="col-sm-6 col-md-6 dates">
+            <div class="col-sm-4 col-md-4 dates">
                 <img src="../icons/twitter.png" data-toggle="modal" data-target=".twittermodal" height="40px" width="40px">
                 <div id="twitter"></div>
 
@@ -46,12 +50,12 @@
                 
             </div> <!-- END OF twitter COL -->
 
-            <div class="col-sm-6 col-md-6 bandcamp">        
+            <div class="col-sm-4 col-md-4 bandcamp">        
                 <img src="../icons/bandcamp.png" data-toggle="modal" data-target=".bandcampmodal" height="40px" width="40px">
                 <div id="bandcamp"></div>
             </div>
 
-            
+
 
         </div> <!-- END OF MID ROW -->
     </div> <!-- END OF MAIN CONTAINER -->

@@ -1,6 +1,7 @@
 html, body {
   height:100%;
   width: 100%;
+  postition: static;
 };
 
 
@@ -177,16 +178,68 @@ ACCOUNT SET UP MAIN CONTAINER
 }
 
 
+/**************************
+Top Row Stuff Artist view
+***************************/
+.artisttopRow {
+  height: 300px;
+  margin: 10px;
+  margin-left: 20px;
+
+}
+
+#photo {
+  border: none;
+  height: 200px;
+  border: 5px solid #242423;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#photo p {
+  text-decoration: underline;
+}
+
+#uplaodImagePic {
+  text-align: right;
+}
 
 
+#stats span {
+  font-weight: bold;
+}
 
+#stats {
+  border: 5px solid #242423;
+  height: 200px;
+  margin-left: 5px;
+}
 
+#bio {
+  border: 5px solid #242423;
+  height: 200px;
+  margin-left: 5px;
 
+}
 
 
 /**************************
-Top Row Stuff 
+mid row artists view
 ***************************/
+
+#twitter {
+  height: 400px;
+  width: 400px;
+  overflow: scroll;
+  text-align: center;
+  margin-left: 10px;
+}
+
+
+
+
+
+
 
 
 
