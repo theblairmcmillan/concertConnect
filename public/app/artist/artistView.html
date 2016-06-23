@@ -19,8 +19,7 @@
         <div class="row artisttopRow">
             <div class="col-sm-2 col-md-2" id="photo">
                 <p id="addImageButton" ngf-select="upload($file)" id="uploadImagePic">upload photo</p>
-                <div><img src="{{currentUser.artist.image}}" height="160px" width="160px"></div>
-                <div>{{currentUser.is_artist}}</div>
+                <div id="userImage"><img src="{{currentUser.artist.image}}" height="150px" width="150px"></div>
                 <div>{{currentUser.artist.name}}</div>
             </div>
 
@@ -42,20 +41,24 @@
 
 
         <div class="row midRow">
-            <div class="col-sm-4 col-md-4 dates">
-                <img src="../icons/twitter.png" data-toggle="modal" data-target=".twittermodal" height="40px" width="40px">
+            <div class="col-sm-3 col-md-3 twitter">
+                <img src="../icons/twitter.png" data-toggle="modal" data-target=".twittermodal" height="20px" width="20px">
                 <div id="twitter"></div>
 
                 
                 
             </div> <!-- END OF twitter COL -->
 
-            <div class="col-sm-4 col-md-4 bandcamp">        
-                <img src="../icons/bandcamp.png" data-toggle="modal" data-target=".bandcampmodal" height="40px" width="40px">
+            <div class="col-sm-3 col-md-3 bandcamp">        
+                <img src="../icons/bandcamp.png" data-toggle="modal" data-target=".bandcampmodal" height="20px" width="20px">
                 <div id="bandcamp"></div>
             </div>
 
+            <div class="col-sm-3 col-md-3 youtube">
+                <img src="../icons/youtube.png" data-toggle="modal" data-target=".youtubemodal" height="20px" width="20px">
+                <div id="youtube"></div>        
 
+            </div>
 
         </div> <!-- END OF MID ROW -->
     </div> <!-- END OF MAIN CONTAINER -->
@@ -108,6 +111,21 @@
     </div>
   </div>
 </div>
+
+<!--youtube modal-->
+
+    <div class="modal fade youtubemodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+        <input class="form-control" type="text" name="youtube" placeholder="youtube iframe link" ng-model="youtubeString">
+        <a class="btn btn-default" href="#" role="button" data-dismiss="modal" ng-click="youtubeUpload(youtubeString)">save</a>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 

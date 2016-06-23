@@ -8,6 +8,7 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 		$scope.currentUser = userFactory.getUserData();
 		$("#bandcamp").html($scope.currentUser.artist.bandcamp)
 		$("#twitter").html($scope.currentUser.artist.twitter)
+		$("#youtube").html($scope.currentUser.artist.youtube)
 		console.log(">>>>", $scope.currentUser);
 	}, 2000);
 
@@ -108,6 +109,31 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 			userFactory.setUserData($scope.currentUser._id);
 		})
 	};
+
+
+	// UPDATE YOUTUBE //
+	$scope.youtubeUpload = function(youtubeString){
+		console.log("getting inside youtube fnct");
+		$http({
+			method: 'POST',
+			url: `/api/artists/${$scope.currentUser.artist._id}`,
+			data: {
+				youtube: youtubeString
+			}
+		}).success(function(data){
+			console.log("youtubesuccess", data);
+			$("youtube").html(data.youtube)
+			userFactory.setUserData($scope.currentUser._id)
+		})
+	};
+
+
+
+
+
+
+
+
 
 }]);
 
