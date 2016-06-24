@@ -66,7 +66,7 @@ module.exports.destroy = (req, res) => {
 // GET SINGLE HOST BY ID AND UPDATE
 module.exports.updateSingleHost = (req, res) => {
 	console.log(req.params)
-	Hosts.findByIdAndUpdate(req.params.id, req.body, (err, host) => {
+	Hosts.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, host) => {
 		if (err) throw err;
 		res.send('Found by Id and Updated!')
 	})

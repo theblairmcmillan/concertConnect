@@ -27,7 +27,7 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 		$("#twitter").html($scope.currentUser.artist.twitter)
 		$("#youtube").html($scope.currentUser.artist.youtube)
 		console.log(">>>>", $scope.currentUser);
-	}, 1500);
+	}, 2500);
 
 
 	$scope.upload = function(file) {
@@ -35,7 +35,7 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 			console.log("Image upload function triggered", $scope.currentUser._id);
 			$http({
 				method: 'POST',
-				url: '/api/artists',
+				url: `/api/artists/${$scope.currentUser.artist._id}`,
 				data: {
 					image: base64Urls,
 					user: $scope.currentUser._id
