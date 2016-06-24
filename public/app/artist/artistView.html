@@ -3,6 +3,7 @@
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
         <div class="container-fluid">
             <div class="navbar-header"><a class="navbar-brand" href="#">hive</a>
+               
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                 </button>
             </div>
@@ -19,7 +20,9 @@
             <div class="col-sm-2 col-md-2" id="photo">
                 <p id="addImageButton" ngf-select="upload($file)" id="uploadImagePic">upload photo</p>
                 <div id="userImage"><img src="{{image}}" height="150px" width="150px"></div>
-                <div>{{currentUser.artist.name}}</div>
+                <div id=userId>{{currentUser.artist.name}}</div>
+
+                
             </div>
 
             <div class="col-sm-5 col-md-5" id="stats">
@@ -40,13 +43,7 @@
 
 
         <div class="row midRow">
-            <div class="col-sm-3 col-md-3 twitterBox">
-                <img src="../icons/twitter.png" data-toggle="modal" data-target=".twittermodal" height="20px" width="20px">
-                <div id="twitter"></div>
 
-                
-                
-            </div> <!-- END OF twitter COL -->
 
             <div class="col-sm-3 col-md-3 bandcamp">        
                 <img src="../icons/bandcamp.png" data-toggle="modal" data-target=".bandcampmodal" height="20px" width="20px">
@@ -71,6 +68,13 @@
 
             <div class="col-sm-3 col-md-3 hostsBottomDiv">
                 <h2>Twitter Feed</h2>
+                <div class="col-sm-3 col-md-3 twitterBox">
+                <img src="../icons/twitter.png" data-toggle="modal" data-target=".twittermodal" height="20px" width="20px">
+                <div id="twitter"></div>
+
+                
+                
+            </div> <!-- END OF twitter COL -->
    
             </div>
 
