@@ -10,6 +10,7 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 		$("#twitter").html($scope.currentUser.artist.twitter)
 		$("#youtube").html($scope.currentUser.artist.youtube)
 		console.log(">>>>", $scope.currentUser);
+		$('.modal-backdrop').remove();
 	}, 2000);
 
 
@@ -126,6 +127,18 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 			userFactory.setUserData($scope.currentUser._id)
 		})
 	};
+
+
+	// GET ALL THE ARTSITS //
+	$http({
+		method: 'GET',
+		url: `/api/users`,
+	}).success(function(users){
+		console.log(">!>!>!>!>!", users);
+		console.log("here we are", users.is_artist);
+		
+	})
+
 
 
 

@@ -1,6 +1,7 @@
 html, body {
   height:100%;
   width: 100%;
+
 }
 
 
@@ -185,6 +186,7 @@ Top Row Stuff Artist view
 
   height: 100%;
   width: 100%;
+  overflow-y: scroll;
 }
 
 #addImageButton {
@@ -193,14 +195,13 @@ Top Row Stuff Artist view
 
 .artisttopRow {
   height: 210px;
-  margin: 10px;
-  margin-top: 10px;
+  background-color: #F5CB5C;
 }
 
 #photo {
   border: none;
   height: 200px;
-  border: 5px solid #242423;
+ /* border: 5px solid #242423;*/
 }
 
 #userImage {
@@ -223,13 +224,13 @@ Top Row Stuff Artist view
 }
 
 #stats {
-  border: 5px solid #242423;
+  /*border: 5px solid #242423;*/
   height: 200px;
   margin-left: 50px;
 }
 
 #bio {
-  border: 5px solid #242423;
+/*  border: 5px solid #242423;*/
   height: 200px;
   margin-left: 50px;
   overflow: auto;
@@ -256,6 +257,14 @@ stas modal
   background-color: #333533;
 }
 
+/********************
+MIddle row stuff
+*********************/
+
+.midRow {
+  height: 400px;
+  background-color: #333533;
+}
 
 
 
@@ -268,11 +277,11 @@ stas modal
 /**************************
 mid row artists view
 ***************************/
-
+/*
   margin-left: 10px;
   margin-right: 25px;
 
-#twitter {
+#twitterBox {
   height: 200px;
   width: 300px;
   overflow: scroll;
@@ -295,7 +304,27 @@ mid row artists view
 .twitter {
   margin-right: 10px;
 }
+*/
 
+
+/********************
+bottom row
+********************/
+
+
+.artistsBottomDiv {
+  height: 400px;
+  width: 50%;
+  background-color: #CFDBD5;
+  overflow-y: scroll;
+}
+
+.hostsBottomDiv {
+  height: 400px;
+  width: 50%;
+  background-color: #F5CB5C;
+  overflow-y: scroll;
+}
 
 
 

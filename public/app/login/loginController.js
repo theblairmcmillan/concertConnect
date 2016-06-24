@@ -34,8 +34,6 @@ app.controller("loginController", ["$scope", "$location","$http", "userFactory",
 			if (data.success === true){
 				userFactory.setUserData(data.user._id);
 				$location.path('/accountSetup')
-				$('loginModl').modal('hide');
-				$('body').removeClass('modal-open');
 				$('.modal-backdrop').remove();
 			} else {
 				console.log(data.message);
