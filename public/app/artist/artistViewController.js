@@ -4,7 +4,9 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 
 	var userId = localStorage.getItem('userId');
 	userId = JSON.parse(userId);
-	// userFactory.setUserData(userId.id)
+	userFactory.setUserData(userId.id)
+
+	$scope.allArtists;
 
 	$scope.currentUser = {};
 	$scope.bandcamp = "";
@@ -74,14 +76,15 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 
 	// UPDATE ABOUT SECTION //
 	$scope.updateAbout = function(updateAboutField){
-		console.log("got inside update about");
+		console.log("got inside update about", $scope.currentUser.artist._id);
 		$http({
 			method: 'POST',
-			url: `/api/artists/${$scope.currentUser._id}`,
+			url: `/api/artists/${$scope.currentUser.artist._id}`,
 			data: {
 				about: updateAboutField
 			}
 		}).success(function(data){
+			console.log("update about: ", data);
 			$scope.about = data.about;
 			userFactory.setUserData($scope.currentUser._id);
 		})
@@ -140,13 +143,23 @@ function ($scope, $location, $http, $routeParams, $timeout, Upload, userFactory)
 	// GET ALL THE ARTSITS //
 	$http({
 		method: 'GET',
-		url: `/api/users`,
-	}).success(function(users){
-		console.log(">!>!>!>!>!", users);
-		console.log("here we are", users.is_artist);
+		url: `/api/artists`,
+	}).success(function(artists){
+		console.log(">!>!>!>!>!", artists);
+		updateData(artists)
 		
 	})
 
+	function updateData(data) {
+		console.log("got to the update data functions", data);
+		$scope.allArtists = data;
+	}
+
+	// LOGOUT FUNCTION
+	$scope.logout = function(){
+		console.log("logout working...lolz");
+		localStorage.removeItem("userId");
+	};
 
 
 

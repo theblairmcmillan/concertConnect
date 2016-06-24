@@ -8,8 +8,7 @@
             </div>
             <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Logout</a>
-                    </li>
+                    <li><a href="#" ng-click="logout()">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -64,12 +63,14 @@
         <div> <!-- bottom row -->
 
             <div class="col-sm-3 col-md-3 artistsBottomDiv">  
-            <h2>Artists</h2>      
+                <h2>Artists</h2>
+                <p ng-repeat="artist in allArtists">{{artist.name}}</p>
+
 
             </div>
 
             <div class="col-sm-3 col-md-3 hostsBottomDiv">
-                <h2>Hosts</h2>
+                <h2>Twitter Feed</h2>
    
             </div>
 

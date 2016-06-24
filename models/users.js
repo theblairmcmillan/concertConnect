@@ -61,7 +61,7 @@ module.exports.getSingleUser = (req, res) => {
 	// console.log(req.params.id)
 	Users.findById(req.params.id).populate('artist').populate('host').exec(function(err, user) {
 		if (err) throw err;
-		console.log("get one:::", user);
+		// console.log("get one:::", user);
 		res.send(user);
 	})
 };
