@@ -191,6 +191,7 @@ Top Row Stuff Artist view
 
 #addImageButton {
   cursor: pointer;
+  text-align: center;
 }
 
 .artisttopRow {
@@ -264,7 +265,15 @@ MIddle row stuff
   background-color: #333533;
 }
 
+.youtube {
+  width: 50%;
+  text-align: center;
+}
 
+.bandcamp {
+  width: 50%;
+  text-align: center;
+}
 
 
 
@@ -325,7 +334,11 @@ bottom row
 }
 
 
+#userId {
 
+  text-align: center;
+
+}
 
 
 
