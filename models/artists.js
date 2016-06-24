@@ -72,7 +72,7 @@ module.exports.destroy = (req, res) => {
 module.exports.updateSingleArtist = (req, res) => {
 	console.log("body", req.body);
 	console.log("params", req.params);
-	Artists.findByIdAndUpdate(req.params.id, req.body, (err, artist) => {
+	Artists.findByIdAndUpdate(req.params.id, {$set:req.body}, (err, artist) => {
 		if (err) throw err;
 		res.send(artist)
 	})

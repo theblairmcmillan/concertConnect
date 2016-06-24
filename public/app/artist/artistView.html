@@ -19,22 +19,22 @@
         <div class="row artisttopRow">
             <div class="col-sm-2 col-md-2" id="photo">
                 <p id="addImageButton" ngf-select="upload($file)" id="uploadImagePic">upload photo</p>
-                <div id="userImage"><img src="{{currentUser.artist.image}}" height="150px" width="150px"></div>
+                <div id="userImage"><img src="{{image}}" height="150px" width="150px"></div>
                 <div>{{currentUser.artist.name}}</div>
             </div>
 
             <div class="col-sm-5 col-md-5" id="stats">
                 <img src="icons/form.png" height="20px" width="20px" id="statsButton" data-toggle="modal" data-target=".statsmodal">
-                <div><span>Hometown:</span> {{currentUser.artist.hometown}}</div>
-                <div><span>Age:</span> {{currentUser.artist.age}}</div>
-                <div><span>Genre:</span> {{currentUser.artist.genre}}</div>
-                <div><span>Group size:</span> {{currentUser.artist.group_size}}</div>
-                <div><span>Website:</span> {{currentUser.artist.website}}</div>
-                <div><span>Tel:</span> {{currentUser.artist.tel}}</div>
+                <div><span>Hometown:</span> {{hometown}}</div>
+                <div><span>Age:</span> {{age}}</div>
+                <div><span>Genre:</span> {{genre}}</div>
+                <div><span>Group size:</span> {{group_size}}</div>
+                <div><span>Website:</span> {{website}}</div>
+                <div><span>Tel:</span> {{tel}}</div>
             </div>
             <div class="col-sm-4 col-md-4" id="bio">
                  <img src="icons/form.png" height="20px" width="20px" id="bioButton" data-toggle="modal" data-target=".aboutmodal">
-                 <p>{{currentUser.artist.about}}</p>
+                 <p>{{about}}</p>
             </div>
         </div> <!-- END OF TOP ROW -->
 
@@ -63,35 +63,18 @@
 
         <div> <!-- bottom row -->
 
-            <div class="col-sm-3 col-md-3 artistsBottomDiv">        
+            <div class="col-sm-3 col-md-3 artistsBottomDiv">  
+            <h2>Artists</h2>      
 
             </div>
 
             <div class="col-sm-3 col-md-3 hostsBottomDiv">
+                <h2>Hosts</h2>
    
             </div>
 
 
-
-
-
-
-
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -101,14 +84,14 @@
     <div class="modal fade statsmodal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-            Please input some of you vital stats
+            Please input some of your vital stats:
             hometown: <input class="form-control" type="text" name="hometown" placeholder="hometown" ng-model="hometown">
             age: <input class="form-control" type="text" name="age" placeholder="age" ng-model="age">
             genre: <input class="form-control" type="text" name="genre" placeholder="genre" ng-model="genre">
             group Size: <input class="form-control" type="text" name="groupsize" placeholder="group size" ng-model="group_size">
             website: <input class="form-control" type="text" name="website" placeholder="website" ng-model="website">
             tel: <input class="form-control" type="number" name="tel" placeholder="tel" ng-model="tel">
-            <a class="btn btn-default" href="#" role="button" data-dismiss="modal" ng-click="updatestats(hometown, age, genre, group_size, website, tel)">save</a>
+            <a class="btn btn-default" href="#" role="button" data-dismiss="modal" ng-click="updatestats()">save</a>
             </div>
         </div>
     </div>

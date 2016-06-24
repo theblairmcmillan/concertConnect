@@ -2,7 +2,19 @@
 
 app.factory('userFactory', ["$location","$http", function ($location, $http) {
 
+	var userId = localStorage.getItem('userId');
+	userId = JSON.parse(userId);
+	console.log("LOCAL STORAGE:", userId);
+
 	var currentUser = {};
+	$http({
+		method: 'GET',
+		url: `/api/users/${userId.id}`,
+	}).success(function(userData){
+		console.log(userData);
+		currentUser = userData;
+	})
+
 
 
 	return {
@@ -10,10 +22,10 @@ app.factory('userFactory', ["$location","$http", function ($location, $http) {
 		getUserData: function(){
 			return currentUser;
 		}, 
-		setUserData: function(currentUserId){
+		setUserData: function(){
 			$http({
 				method: 'GET',
-				url: `/api/users/${currentUserId}`,
+				url: `/api/users/${userId.id}`,
 			}).success(function(userData){
 				console.log(userData);
 				currentUser = userData;
