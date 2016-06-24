@@ -12,6 +12,7 @@ app.controller("loginController", ["$scope", "$location","$http", "userFactory",
 		}).success(function(data) {
 			console.log("data from login!>>", data.message);
 			if (data.success === true) {
+	            localStorage.setItem('userId', JSON.stringify({'id': data.user._id}));
 				userFactory.setUserData(data.user._id);
 				$location.path('/artists')
 			} else {
@@ -32,11 +33,14 @@ app.controller("loginController", ["$scope", "$location","$http", "userFactory",
 		}).success(function(data){
 			console.log("data from signin!>>", data);
 			if (data.success === true){
+	            localStorage.setItem('userId', JSON.stringify({'id': data.user._id}));
 				userFactory.setUserData(data.user._id);
 				$location.path('/accountSetup')
+				$('.modal-backdrop').remove();
 			} else {
 				console.log(data.message);
 			}
+
 			
 		})
 	}
